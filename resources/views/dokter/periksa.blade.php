@@ -17,7 +17,7 @@
         <i class="nav-icon fas fa-search"></i>
         <p>
           Periksa
-          <span class="right badge badge-danger">New</span>
+          
         </p>
       </a>
     </li>
@@ -26,7 +26,7 @@
         <i class="nav-icon fas fa-vials"></i>
         <p>
           Obat
-          <span class="right badge badge-danger">New</span>
+          
         </p>
       </a>
     </li>
@@ -179,7 +179,7 @@
 
           <div class="form-group">
             <label>Biaya Periksa</label>
-            <input type="text" id="biaya_periksa_view" value="Rp. 150.000" class="form-control" readonly>
+            <input type="text" id="biaya_periksa_view" value="Rp. 100.000" class="form-control" readonly>
             <input type="hidden" name="biaya_periksa" id="biaya_periksa">
           </div>
         </div>
@@ -193,7 +193,7 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    let hargaAwal = 150000;
+    let hargaAwal = 100000;
     let totalObat = 0;
 
     function updateTotal() {
@@ -206,13 +206,13 @@
       var button = $(event.relatedTarget);
       var id = button.data('id');
       var nama = button.data('nama');
-      var tgl = button.data('tgl');
+      var tgl = button.data('tgl'); // Ambil tanggal pemeriksaan
       var catatan = button.data('catatan');
       var biaya = button.data('biaya');
 
       var modal = $(this);
       modal.find('#nama').val(nama);
-      modal.find('#tgl_periksa').val(tgl);
+      modal.find('#tgl_periksa').val(tgl); // Pastikan tanggal periksa terisi di input
       modal.find('#catatan').val(catatan);
 
       totalObat = 0;
