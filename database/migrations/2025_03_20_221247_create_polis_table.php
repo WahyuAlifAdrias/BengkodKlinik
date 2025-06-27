@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('detail_periksas', function (Blueprint $table) {
+        Schema::create('polis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_periksa')->constrained('periksas')->onDelete('cascade');
-            $table->foreignId('id_obat')->constrained('obats')->onDelete('cascade');
+            $table->string('nama');
+            $table->text('keterangan')->nullable(); // kolom tambahan
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('detail_periksas');
+        Schema::dropIfExists('polis');
     }
 };
